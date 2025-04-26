@@ -2841,12 +2841,14 @@ void RunTimeSlice(size_t time_slice, bool speed_up) {
     //#endif
   }
 
-  for (size_t i = 0; i < 256; i++) {
-    if (statistics[i] > 1000) {
-      Serial.printf("0x%02x=%d,", i, statistics[i]);
+  if (LOG_LEVEL <= LOG_LEVEL_VERBOSE) {
+    for (size_t i = 0; i < 256; i++) {
+      if (statistics[i] > 1000) {
+        Serial.printf("0x%02x=%d,", i, statistics[i]);
+      }
     }
+    Serial.println();
   }
-  Serial.println();
   cycles -= end_cycles;
   timer0_cycles -= end_cycles;
   timer1_cycles -= end_cycles;
