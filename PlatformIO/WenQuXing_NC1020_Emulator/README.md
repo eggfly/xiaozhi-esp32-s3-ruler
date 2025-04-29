@@ -12,6 +12,7 @@ It's a PlatformIO project.
 * https://www.emsky.net/bbs/forum.php?mod=viewthread&tid=33474
 * https://computer.retromuseum.org:86/player.html?machine=ggvnc1020
 * https://www.bilibili.com/video/BV1kt421w7Pb/
+* https://github.com/wangyu-/NC1020android -> This branch is 2 commits ahead of hackwaly/NC1020:master
 
 根据nc1020.cpp中的代码,主要的内存访问逻辑在Peek和PeekW函数中。我来整理一个详细的内存映射表格:
 
