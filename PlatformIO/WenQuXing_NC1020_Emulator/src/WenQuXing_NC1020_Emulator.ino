@@ -609,11 +609,11 @@ public:
 void setup()
 {
   Serial.begin(115200);
-  rtc_cpu_freq_config_t config;
-  rtc_clk_cpu_freq_get_config(&config);
-  Serial.printf("Current CPU Freq: %u MHz\n", config.freq_mhz);
-  config.freq_mhz = 80;
-  rtc_clk_cpu_freq_set_config(&config);
+  // rtc_cpu_freq_config_t config;
+  // rtc_clk_cpu_freq_get_config(&config);
+  // Serial.printf("Current CPU Freq: %u MHz\n", config.freq_mhz);
+  // config.freq_mhz = 80;
+  // rtc_clk_cpu_freq_set_config(&config);
   Serial.printf("Current CPU Freq: %u MHz\n", ESP.getCpuFreqMHz());
 
   keyboard_setup();

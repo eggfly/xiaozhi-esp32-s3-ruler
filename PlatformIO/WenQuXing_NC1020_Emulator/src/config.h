@@ -9,7 +9,7 @@
 #define LOG_LEVEL_DEBUG 1
 #define LOG_LEVEL_INFO 2
 
-#define LOG_LEVEL LOG_LEVEL_DEBUG
+#define LOG_LEVEL LOG_LEVEL_VERBOSE
 
 #define RGB888_TO_RGB565(r, g, b) \
     ((((r >> 3) & 0x1F) << 11) | \

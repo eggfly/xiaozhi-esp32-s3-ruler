@@ -1145,11 +1145,11 @@ void RunTimeSlice(size_t time_slice, bool speed_up) {
     }
 #endif
     auto opcode = Peek(reg_pc++);
+    statistics[opcode]++;
     opcode_handler h = handler_table[opcode];
     if (h) {
       h(cycles, reg_pc, reg_a, reg_ps, reg_x, reg_y, reg_sp);
     } else {
-      statistics[opcode]++;
       switch (opcode) {
         case 0x00: {
             reg_pc++;
@@ -2842,8 +2842,9 @@ void RunTimeSlice(size_t time_slice, bool speed_up) {
   }
 
   if (LOG_LEVEL <= LOG_LEVEL_VERBOSE) {
+    Serial.print("ST: ");
     for (size_t i = 0; i < 256; i++) {
-      if (statistics[i] > 1000) {
+      if (statistics[i] > 200) {
         Serial.printf("0x%02x=%d,", i, statistics[i]);
       }
     }
